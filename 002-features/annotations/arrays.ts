@@ -14,3 +14,17 @@ const carsByMake = [
     ['F150'],
     ['corola']
 ];
+
+// Help with inference when extracting values
+// TS inference automatically knows what these types are going to be
+const car = carMakers[0];
+const myCar = carMakers.pop();
+
+// Prevent incompatible values
+carMakers.push(100)
+
+// Help with 'map' and 'reduce' etc
+// receive car as a string and return a string as well
+carMakers.map((car: string): string => {
+    return car;
+})
