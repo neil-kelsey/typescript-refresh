@@ -28,3 +28,10 @@ carMakers.push(100)
 carMakers.map((car: string): string => {
     return car;
 })
+
+// Flexible types
+const importantDates: (Date | string)[] = [new Date()]
+importantDates.push('2030-10-10');
+importantDates.push(new Date());
+// Not a string or date so errors
+importantDates.push(100);
