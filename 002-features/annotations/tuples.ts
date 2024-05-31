@@ -20,4 +20,12 @@ const newPepsi: Drink = ['brown', true, 40];
 const sprite: Drink = ['clear', true, 35];
 const tea: Drink = ['brown', false, 5];
 
+// I dont like Tuples - what do these numbers mean to me as an engineer?
+// Not a lot
+const carSpecs: [number, number] = [400, 3354];
 
+// As an object is much more human readable
+const carStats = {
+    horsepower: 400,
+    weight: 3354
+}
