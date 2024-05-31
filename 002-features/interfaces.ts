@@ -1,13 +1,19 @@
+// Not limited to primitive types, we can you any type we want
+// Here's an example using more complex types - a date and a function
 interface Vehicle {
     name: string;
-    year: number;
+    year: Date;
     broken: boolean;
+    summary(): string;
 }
 
 const oldCivic = {
     name: 'Civic',
-    year: 2000,
-    broken: true
+    year: new Date(),
+    broken: true,
+    summary(): string {
+        return `Name: ${this.name}`;
+    }
 }
 
 // This function is used to print out the above const
@@ -20,9 +26,10 @@ const oldCivic = {
 
 // This is the interface version
 const printVehicle = (vehicle: Vehicle): void => {
-    console.log(`Name: ${vehicle.name}`);
-    console.log(`Year: ${vehicle.year}`);
-    console.log(`Broken: ${vehicle.broken}`);
+    // console.log(`Name: ${vehicle.name}`);
+    // console.log(`Year: ${vehicle.year}`);
+    // console.log(`Broken: ${vehicle.broken}`);
+    console.log(vehicle.summary)
 };
 
 printVehicle(oldCivic);
