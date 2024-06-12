@@ -34,6 +34,13 @@ const vehicleTwo = new Vehicle('blue')
 // A car is a type of vehicle so we want it to have all the same properties as a vehicle
 // You just extend that class
 class Car extends Vehicle {
+    // We don't need a constructor in Car - Car will use Vehicles if we don't have one
+    constructor(public wheels: number, colour: string) {
+        // super is a call to the super class - the parent class
+        // We then pass the colour argument to the super / parent class
+        super(colour);
+    }
+
     // We can also redefine methods if we choose
     // changing the scope to private means we cannot call this
     // method from outside of this class
@@ -50,7 +57,7 @@ class Car extends Vehicle {
 
 // very C# style
 // const vehicle = new Vehicle();
-// // Can't use car variable as that's used in one of the other files
-// const cartest = new Car();
-// cartest.startDrivingProcess();
-// cartest.honk();
+// Can't use car variable as that's used in one of the other files
+const cartest = new Car(4, 'blue');
+cartest.startDrivingProcess();
+cartest.honk();
